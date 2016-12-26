@@ -24,6 +24,48 @@
               <button type="button" name="button" ng-click="changeImage();"> Click Here</button>
               <img ng-src="ball{{imgValue}}.jpeg">
           </div>
+
+          <div>
+            test filters <br>
+            <Span> upper case - {{name|uppercase}} </span><br>
+            <Span> Currency - {{tvalue|currency:$:4}} </span><br>
+          </div>
+
+          <div>
+            test Custome filter <br>
+            <Span>{{useCustomFilter()}}</span>
+
+          </div>
+
+          <div>
+            test Custome filter <br>
+            <Span>{{"Rahul"|customArg:'Halgekar' | uppercase }}</span>
+          </div>
+
+          <div>
+            <ul> ng-repeat test
+
+
+            </ul>
+            <li ng-repeat="item in shoppingList"> {{$index+1}}. Order {{item.quantity}} of {{item.name}}
+
+            </li>
+
+            <input type="text" ng-model="shoppingList[1].quantity">
+
+            <input type="text" ng-model="newItemName" placeholder="Item Name">
+            <input type="text" ng-model="newItemQuantity" placeholder="Quantity">
+            <button type="button" ng-click="addItemToList()"> Add Item to list</button>
+          </div>
+          <div >
+            <ul>
+              <input type="text" ng-model="searchText">
+              <li ng-repeat="item2 in itemList|filter:searchText">{{item2}} </li>
+            </ul>
+          </div>
+
+
+
     </div>
 
       </div>

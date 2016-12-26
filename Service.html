@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="service-app.js"></script>
+    <title>Hello Coursera</title>
+  </head>
+
+  <body ng-app = "serviceApp">
+    <h1> Hello Coursera! Service Test
+    </h1>
+
+    <div ng-controller = "AddController as adder">
+      <input type="text" ng-model="adder.itemName" placeholder="Enter Item Name"/>
+      <input type="text" ng-model="adder.itemQuantity" placeholder="Enter Item Quantity"/>
+      <button type="button" ng-click="adder.addItem();"> Click To add</button>
+    </div>
+
+    <div ng-controller = "ShowController as show">
+      <ul>
+        <li ng-repeat = "item in show.items">
+          {{item.quantity}} of {{item.name}}
+          <button type="button" ng-click="show.removeItem($index)">Remove</button>
+        </li>
+      </ul>
+    </div>
+
+    <div ng-controller = "AddShowFactoryController as controllerFact">
+    <div >
+      <input type="text" ng-model="controllerFact.itemName" placeholder="Enter Item Name"/>
+      <input type="text" ng-model="controllerFact.itemQuantity" placeholder="Enter Item Quantity"/>
+      <button type="button" ng-click="controllerFact.addItem();"> Click To add</button>
+    </div>
+
+    <div>
+      <ul>
+        <li ng-repeat = "item in controllerFact.items">
+          {{item.quantity}} of {{item.name}}
+          <button type="button" ng-click="controllerFact.removeItem($index)">Remove</button>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div ng-controller = "AddShowFactoryProvider as controllerProv">
+  <div >
+    <input type="text" ng-model="controllerProv.itemName" placeholder="Enter Item Name"/>
+    <input type="text" ng-model="controllerProv.itemQuantity" placeholder="Enter Item Quantity"/>
+    <button type="button" ng-click="controllerProv.addItem();"> Click To add</button>
+  </div>
+
+  <div>
+    <ul>
+      <li ng-repeat = "item in controllerProv.items">
+        {{item.quantity}} of {{item.name}}
+        <button type="button" ng-click="controllerProv.removeItem($index)">Remove</button>
+      </li>
+    </ul>
+    <div ng-if="controllerProv.errorMessage" class="error"> Error: {{controllerProv.errorMessage}} </div>
+    <div ng-show="controllerProv.errorMessage" class="error"> Error: {{controllerProv.errorMessage}} </div>
+    <div ng-hide="!controllerProv.errorMessage" class="error"> Error: {{controllerProv.errorMessage}} </div>
+
+  </div>
+
+</div>
+
+  </body>
+</html>
