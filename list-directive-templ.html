@@ -1,0 +1,10 @@
+<ol>
+  <ul>
+    <li ng-repeat = "item in list.items">
+      {{item.quantity}} of {{item.name}}
+      <button type="button" ng-click="list.onRemove({index:$index})">Remove</button>
+    </li>
+  </ul>
+</ol>
+
+<div class="error"  ng-transclude> Do not eat Chips </div>

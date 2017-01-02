@@ -1,0 +1,12 @@
+<div>
+<ol>
+  <ul>
+    <li ng-repeat = "item in list.items">
+    <span>{{item.name}} </span>, <span>{{item.short_name}} </span>, <span>{{item.description}}</span>
+    <button type="button" ng-click="list.onRemove({index:$index})">Don't want this one!</button>
+    </li>
+  </ul>
+</ol>
+</div>
+
+<div class="error" ng-if = "list.hasResult()">Nothing found</div>

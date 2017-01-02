@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="directive.js"></script>
+    <title>Hello Coursera</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body ng-app = "serviceApp">
+    <h1> Hello Coursera! Service Test
+    </h1>
+
+    <div ng-controller = "AddShowFactoryController as controller1">
+    <div >
+      <input type="text" ng-model="controller1.itemName" placeholder="Enter Item Name"/>
+      <input type="text" ng-model="controller1.itemQuantity" placeholder="Enter Item Quantity"/>
+      <button type="button" ng-click="controller1.addItem();"> Click To add</button>
+    </div>
+  <list-display my-list="controller1" items="controller1.items" on-remove="controller1.removeItem(index)">
+    <span>content outside</span>
+  </list-display>
+
+  </div>
+
+  <div ng-controller = "AddShowFactoryProvider as controller2">
+  <div >
+    <input type="text" ng-model="controller2.itemName" placeholder="Enter Item Name"/>
+    <input type="text" ng-model="controller2.itemQuantity" placeholder="Enter Item Quantity"/>
+    <button type="button" ng-click="controller2.addItem();"> Click To add</button>
+  </div>
+
+  <list-display my-list="controller2" items="controller2.items"> </list-display>
+  <div>
+    <div ng-if="controller2.errorMessage" class="error"> Error: {{controller2.errorMessage}} </div>
+    <div ng-show="controller2.errorMessage" class="error"> Error: {{controller2.errorMessage}} </div>
+    <div ng-hide="!controller2.errorMessage" class="error"> Error: {{controller2.errorMessage}} </div>
+
+  </div>
+
+</div>
+
+  </body>
+</html>
