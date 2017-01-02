@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 angular.module('NarrowItDownApp', [])
-.constant('ApiBasePath', "http://davids-restaurant.herokuapp.com")
+.constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
 .controller('NarrowItDownController', NarrowItDownController)
 .controller('FoundItemCntrl', FoundItemCntrl)
 .service('MenuSearchService', MenuSearchService)
@@ -80,7 +80,6 @@ function MenuSearchService($http, ApiBasePath){
             data.push(mItem);
           }
         }
-        console.log("response" + data);
         return data;
     });
 
