@@ -74,9 +74,10 @@ function MenuSearchService($http, ApiBasePath){
     );
     var promiseToReturn = getMatchPromise.then(function(response){
         var data = [];
+        var lowerSearch = searchTerm.toLowerCase();
         for(var i = 0; i < response.data.menu_items.length; i++ ){
           var mItem = response.data.menu_items[i];
-          if(mItem.description.toLowerCase().indexOf(searchTerm) !== -1){
+          if(mItem.description.toLowerCase().indexOf(lowerSearch) !== -1){
             data.push(mItem);
           }
         }
