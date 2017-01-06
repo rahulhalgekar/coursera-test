@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html >
+  <head >
+    <meta charset="utf-8">
+    <title>Hello Coursera</title>
+    <script src="angular.min.js" charset="utf-8"></script>
+    <script src="angular-ui-router.min.js" charset="utf-8"></script>
+    <script src="router-app.js" charset="utf-8"></script>
+  </head>
+
+  <body ng-app ="RoutingApp">
+    <h1> Hello Coursera!  Welcome to UI Route
+    </h1>
+
+    <div class ="tabs">
+      <a ui-sref ="tab1">tab1</a>
+      <a ui-sref ="tab2">tab2</a>
+    </div>
+
+    <ui-view> </ui-view>
+
+  </body>
+</html>

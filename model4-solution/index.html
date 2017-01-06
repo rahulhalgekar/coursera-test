@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+  <head >
+    <meta charset="utf-8">
+    <title>Hello Coursera</title>
+    <script src="lib/angular.min.js" charset="utf-8"></script>
+    <script src="lib/angular-ui-router.min.js" charset="utf-8"></script>
+    <script src="src/menuapp.module.js" charset="utf-8"></script>
+    <script src="src/MenuAppRoute.js" charset="utf-8"></script>
+    <script src="src/data.module.js" charset="utf-8"></script>
+    <script src="src/menudata.service.js" charset="utf-8"></script>
+    <script src="src/categories.component.js" charset="utf-8"></script>
+    <script src="src/item.component.js" charset="utf-8"></script>
+    <script src="src/menuapp.controller.js" charset="utf-8"></script>
+    <script src="src/item-controller.js" charset="utf-8"></script>
+  </head>
+
+  <body ng-app ="MenuApp">
+    <h1> "Welcome to our Restaurant"
+    </h1>
+
+    <div class ="tabs">
+      <!-- <a ui-sref ="categories">Click</a> Here for list of categories
+      <!-- <a ui-sref ="home">home</a>
+      <a ui-sref ="items({shortname:'NL'})">items</a> --> 
+    </div>
+
+    <ui-view> </ui-view>
+
+  </body>
+</html>
